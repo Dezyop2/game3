@@ -45,9 +45,6 @@ var QKey;
 var DKey;
 var ZKey;
 
-var AKey;
-var EKey;
-
 var game = new Phaser.Game(config);
 
 function preload ()
@@ -139,23 +136,6 @@ function create ()
     QKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q);
     DKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     ZKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Z);
-
-    AKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-    EKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
-
-    this.input.keyboard.on('keydown-A', function(event) {
-        player.setVelocityX(-1000);
-        setTimeout(() => {
-            player.setVelocityX(0);
-        }, 100);
-    });
-
-    this.input.keyboard.on('keydown-E', function(event) {
-        player.setVelocityX(1000);
-        setTimeout(() => {
-            player.setVelocityX(0);
-        }, 100);
-    });
 }
 
 function update ()
@@ -187,20 +167,6 @@ function update ()
     if ((cursors.up.isDown || ZKey.isDown) && player.body.touching.down)
     {
         player.setVelocityY(-900);
-    }
-
-    if (AKey.isDown) {
-        player.setVelocityX(-1000);
-        setTimeout(() => {
-            player.setVelocityX(0);
-        }, 100);
-    }
-
-    if (EKey.isDown) {
-        player.setVelocityX(1000);
-        setTimeout(() => {
-            player.setVelocityX(0);
-        }, 100);
     }
 }
 
