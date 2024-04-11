@@ -128,6 +128,14 @@ function create ()
     this.physics.add.overlap(player, stars, collectStar, null, this);
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
+
+    this.input.keyboard.on('keydown-Q', function(event) {
+        // Exécuter le dash lorsque la touche "q" est pressée
+        player.setVelocityX(-800); // Changer la vélocité pour un dash plus rapide
+        setTimeout(() => {
+            player.setVelocityX(0); // Arrêter le joueur après un court délai
+        }, 100); // Ajuster le délai au besoin
+    });
 }
 
 function update ()
