@@ -3,16 +3,27 @@
 <head> 
     <meta charset="UTF-8" />
     <title>Making your first Phaser 3 Game - Part 10</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
     <style type="text/css">
         body {
             margin: 0;
         }
     </style>
+    <img class="img_hud" src="assets/hud.png">
 </head>
 <body>
 
 <script type="text/javascript">
+
+function refreshPage() {
+    location.reload();
+}
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'r' || event.key === 'R') {
+        location.reload();
+    }
+});
 
 var config = {
     type: Phaser.AUTO,
